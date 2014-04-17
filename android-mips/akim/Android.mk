@@ -1,4 +1,5 @@
 ifeq ($(TARGET_ARCH),mips)
+ifndef is_sdk_build  # omit libakim.so from SDK images
 
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
@@ -15,4 +16,5 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TAGS := shell_$(TARGET_SHELL)
 include $(BUILD_PREBUILT)
 
-endif
+endif  # is_sdk_build
+endif  # mips
